@@ -28,6 +28,8 @@ import HostVanPricing from "./pages/Host/HostVanPricing"
 import HostVanPhotos from "./pages/Host/HostVanPhotos"
 
 import NotFound from "./pages/NotFound"
+import Login from "./pages/Login"
+import AuthRequired from "./Components/AuthRequired"
 
 import Layout from "./Components/Layout"
 import HostLayout from "./Components/HostLayout"
@@ -44,7 +46,12 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="vans" element={<Vans />} />
           <Route path="vans/:id" element={<VanDetail />} />
+          <Route
+            path="login"
+            element={<Login />}
+          />
           
+          <Route element={<AuthRequired />}>
           <Route path="host" element={<HostLayout />}>
             <Route index element={<Dashboard />} />
             <Route path="income" element={<Income />} />
@@ -54,6 +61,7 @@ function App() {
               <Route index element={<HostVanInfo />} />
               <Route path="pricing" element={<HostVanPricing />} />
               <Route path="photos" element={<HostVanPhotos />} />
+            </Route>
             </Route>
           </Route>
           <Route path="*" element={<NotFound />} />
