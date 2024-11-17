@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, Outlet } from "react-router-dom"
+import { NavLink, Outlet } from "react-router-dom"
 
 export default function HostLayout() {
     const activeStyles = {
@@ -12,6 +12,7 @@ export default function HostLayout() {
             <nav className="host-nav">
                 <NavLink
                     to="/host"
+                    end
                     style={({ isActive }) => isActive ? activeStyles : null}
                 >
                     Dashboard
