@@ -26,5 +26,9 @@ createServer({
             const id = request.params.id
             return schema.vans.find(id)
         })
+        this.get("/host/vans/:id", (schema, request) => {
+            const id = request.params.id
+            return schema.vans.findBy({ id, hostId: "123" })
+        })
     }
 })
